@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* ── Design tokens: edit these to fix colour + typography globally ── */
+@theme {
+  --color-brand: #0a2fe6;
+  --color-lime: #c8f30f;
+  --color-ink: #0b1220;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+  --color-chip: #f1f2f4;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+body { @apply bg-white font-sans text-ink antialiased; }
+h1, h2, h3 { font-family: var(--font-display); }
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.12) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+.container-x { @apply mx-auto w-full max-w-[1200px] px-6; }
