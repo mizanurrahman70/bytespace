@@ -2,8 +2,9 @@
 
 /* ── Design tokens: edit these to fix colour + typography globally ── */
 @theme {
-  --color-brand: #0a2fe6;
-  --color-lime: #c8f30f;
+  --color-brand: #003be2;
+  --color-brand-dark: #0030bd;
+  --color-lime: #d0f70c;
   --color-ink: #0b1220;
   --color-muted: #6b7280;
   --color-line: #e5e7eb;
@@ -20,5 +21,27 @@ h1, h2, h3 { font-family: var(--font-display); }
     linear-gradient(to right, rgb(255 255 255 / 0.12) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.12) 1px, transparent 1px);
   background-size: 120px 120px;
+  background-position: -1px -1px;
 }
 .container-x { @apply mx-auto w-full max-w-[1200px] px-6; }
+
+/* soft lime + periwinkle glows used behind the light sections */
+.bg-glow {
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(40% 35% at 30% 0%, rgb(208 247 12 / 0.28), transparent 70%),
+    radial-gradient(30% 30% at 0% 45%, rgb(0 59 226 / 0.12), transparent 70%),
+    radial-gradient(30% 30% at 100% 95%, rgb(0 59 226 / 0.16), transparent 70%),
+    radial-gradient(28% 28% at 5% 95%, rgb(208 247 12 / 0.3), transparent 70%);
+}
+.bg-glow-alt {
+  background-color: #fafafa;
+  background-image:
+    radial-gradient(35% 45% at 50% 10%, rgb(208 247 12 / 0.4), transparent 70%),
+    radial-gradient(25% 40% at 100% 50%, rgb(208 247 12 / 0.3), transparent 70%),
+    radial-gradient(30% 40% at 5% 90%, rgb(0 59 226 / 0.18), transparent 70%);
+}
+
+@keyframes float { 50% { transform: translateY(-10px); } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .animate-float { animation: none; } }

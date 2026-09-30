@@ -8,13 +8,14 @@ const links = [
 
 export function Logo({ iconOnly = false }: { iconOnly?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-2 text-lg font-bold text-white">
-      <span className="grid size-7 place-items-center rounded-md bg-lime text-brand">
-        <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden>
-          <path d="M6 3h6a5 5 0 0 1 3.5 8.6A5 5 0 0 1 13 21H6V3Zm4 4v3h2a1.5 1.5 0 0 0 0-3h-2Zm0 7v3h3a1.5 1.5 0 0 0 0-3h-3Z" />
-        </svg>
-      </span>
-      {!iconOnly && "ByteSpace"}
+    <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white">
+      {/* lime "b" mark with a play notch */}
+      <svg viewBox="0 0 32 32" className="size-8" aria-hidden>
+        <rect x="2" y="1" width="9" height="28" rx="4.5" fill="#d0f70c" />
+        <circle cx="19" cy="19" r="11" fill="#d0f70c" />
+        <path d="M16 14.5v9l7-4.5z" fill="#003be2" />
+      </svg>
+      {!iconOnly && <span>ByteSpace</span>}
     </Link>
   );
 }

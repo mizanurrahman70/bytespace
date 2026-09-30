@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Logo } from "./Navbar";
 import CourseCard from "./CourseCard";
-import { Cone, Ring, WhiteSquiggle } from "./Shapes";
+import { AvatarStack } from "./Avatars";
+import { Coil, Cone, Ring } from "./Shapes";
 
 export default function AuthShell({ title, blurb, children }: { title: string; blurb: string; children: React.ReactNode }) {
   return (
@@ -16,16 +17,13 @@ export default function AuthShell({ title, blurb, children }: { title: string; b
             <div className="relative mt-10 hidden h-[520px] w-[520px] max-w-full lg:block" aria-hidden>
               <div className="absolute left-0 top-32 w-[380px] text-ink"><CourseCard course={{ title: "Build Digital Asset" }} i={1} /></div>
               <div className="absolute left-[110px] top-0 z-10 w-[370px] text-ink shadow-xl"><CourseCard course={{ title: "the Power of Big Data" }} i={2} /></div>
-              <Ring className="absolute left-12 top-10 z-20 size-28 !border-[26px] !border-lime" />
-              <Cone className="absolute -left-2 top-[400px] z-20 w-28 [&_polygon]:fill-lime [&_polygon]:stroke-lime" />
+              <Ring tone="lime" className="absolute left-8 top-4 z-20 size-40" />
+              <Cone tone="lime" className="absolute -left-2 top-[400px] z-20 w-28" />
               <div className="absolute left-[226px] top-[440px] z-20 w-[260px] rounded-xl bg-lime p-4 text-ink">
                 <p>Happy Students</p><p className="text-[11px]">4.5 (240) ★</p>
-                <div className="mt-2 flex items-center">
-                  {["#f59e0b", "#ec4899", "#8b5cf6", "#3b82f6", "#10b981"].map((c) => <i key={c} style={{ background: c }} className="-ml-2 size-9 rounded-full border-2 border-lime first:ml-0" />)}
-                  <b className="-ml-2 grid size-9 place-items-center rounded-full bg-ink text-[11px] text-white">2K+</b>
-                </div>
+                <div className="mt-2"><AvatarStack count="2K+" n={5} size="size-9" ring="border-lime" /></div>
               </div>
-              <WhiteSquiggle className="absolute left-[400px] top-[350px] z-30 w-28" />
+              <Coil tone="white" className="absolute left-[400px] top-[350px] z-30 w-28" />
             </div>
           </div>
           <section className="flex min-h-[784px] flex-col rounded-[32px] bg-white p-10 text-ink">{children}</section>

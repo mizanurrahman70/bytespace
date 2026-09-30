@@ -1,11 +1,17 @@
-export default function Chips({ items, center = false }: { items: string[]; center?: boolean }) {
+"use client";
+import { useState } from "react";
+
+export default function Chips({ items, center = false, more = false }: { items: string[]; center?: boolean; more?: boolean }) {
+  const [active, setActive] = useState(items[0]);
   return (
-    <div className={`flex flex-wrap gap-2.5 ${center ? "justify-center" : ""}`}>
-      {items.map((c, i) => (
-        <button key={c} className={`rounded-full px-4 py-2 text-xs ${i === 0 ? "bg-lime font-medium" : "bg-chip text-ink/80 hover:bg-neutral-200"}`}>
+    <div className={`flex flex-wrap gap-x-4 gap-y-5 ${center ? "justify-center" : ""}`}>
+      {items.map((c) => (
+        <button key={c} onClick={() => setActive(c)} aria-pressed={active === c}
+          className={`rounded-full px-4 py-2.5 text-base transition ${active === c ? "bg-lime" : "bg-chip text-ink/80 hover:bg-neutral-200"}`}>
           {c}
         </button>
       ))}
+      {more && <button className="px-2 text-base text-brand hover:underline">+ More</button>}
     </div>
   );
 }
