@@ -7,13 +7,13 @@ import { CreatorCTA, Discover, Growth, Testimonials } from "@/components/HomeSec
 export default function Home() {
   return (
     <main>
-      <div className="relative bg-brand"><Navbar active="/" /><Hero /></div>
+      <div className="bg-grid relative bg-brand"><Navbar active="/" /><Hero /></div>
       <LogoStrip />
       <Discover />
       <Growth />
       <CreatorCTA />
       <Testimonials />
-      <Footer />
+      <Footer className="" />
     </main>
   );
 }

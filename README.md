@@ -7,5 +7,5 @@ npm install
 npm run dev
 ```
 
-Replace `public/images/hero-student.svg` with the real hero photo (update `src` in `components/Hero.tsx`).
+Photos live in `public/images` (Unsplash placeholders — swap in real ones with the same filenames).
 Brand tokens live in `app/globals.css` under `@theme`.
